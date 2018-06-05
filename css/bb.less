@@ -1,0 +1,509 @@
+body
+{
+    background-color: #f0eeef;
+    background-image: url(../images/bgimg.jpg);
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-size: 100% auto;
+}
+
+@redd:#bf1616;
+@padd: 20px;
+
+section
+{
+    width: 100%;
+    min-width: 310px;
+    max-width: 480px;
+    margin: 0 auto;
+    & + section
+    {
+        padding-bottom: 1em;
+    }
+    // padding: 0 @padd / 2;
+    > div
+    {
+        margin: 0 auto;
+        @media (min-width: 310px) and (max-width: 400px)
+        {
+            max-width: 290px;
+        }
+        @media (min-width: 400px) and (max-width: 767px)
+        {
+            max-width: 330px;
+        }
+    }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p
+{
+    font-weight: 200;
+    line-height: 1.3em;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover
+{
+    color: #000;
+}
+
+.bb_title
+{
+    text-align: center;
+    span
+    {
+        color: @redd;
+    }
+}
+
+.bb_userinf
+{
+    @userhei: 60px;
+    .user_profile
+    {
+        float: left;
+
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+
+        border: 1px solid #f0eeef;
+        border-radius: 50%;
+    }
+    > div
+    {
+        position: relative;
+
+        height: @userhei;
+        height: 50px;
+        margin-top: 10px;
+        padding-top: @padd / 2;
+        padding-bottom: @padd / 2;
+
+        border-top: 1px solid @redd;
+        border-bottom: 1px solid @redd;
+    }
+    p
+    {
+        font-size: 12px;
+
+        overflow: hidden;
+
+        max-width: 13em;
+        margin-bottom: 0;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .user_butt
+    {
+        position: absolute;
+        top: 5px;
+        right: 0;
+
+        width: 100px;
+    }
+    .user_master
+    {
+        p
+        {
+            margin-top: 10px;
+            + p
+            {
+                margin-top: 0;
+            }
+        }
+    }
+    .user_yourfirend
+    {
+        p
+        {
+            margin-top: 5px;
+            + p
+            {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.bb_activity
+{
+    > div
+    {
+        margin-top: 10px;
+
+        text-align: center;
+        span
+        {
+            color: @redd;
+        }
+        img
+        {
+            box-shadow: 0 9px 11px rgba(0, 0, 0, .25);
+        }
+    }
+}
+
+
+.bb_Leaderboard
+{
+    font-size: 12px;
+
+    text-align: center;
+    > div
+    {
+        margin-top: 1em;
+    }
+    .lb_but
+    {
+        a
+        {
+            text-decoration: underline;
+
+            color: @redd;
+        }
+    }
+    .my_lb
+    {
+        box-sizing: border-box;
+        padding: 10px 20px;
+
+        color: #ececec;
+        background-color: rgba(0, 0, 0, .73);
+        box-shadow: 0 9px 11px rgba(0, 0, 0, .25);
+    }
+}
+
+.my_lb
+{
+    h1
+    {
+        color: @redd;
+    }
+    .countdown
+    {
+        b
+        {
+            font-size: 34px;
+            font-weight: 100;
+            line-height: 34px;
+        }
+    }
+}
+
+.lb_list
+{
+    position: relative;
+    h2
+    {
+        font-weight: bold;
+    }
+    .previous,
+    .next
+    {
+        position: absolute;
+        top: -8px;
+        a
+        {
+            display: block;
+
+            padding: 10px;
+        }
+    }
+    .previous
+    {
+        left: -10px;
+    }
+    .next
+    {
+        right: -10px;
+    }
+    p
+    {
+        // text-align: left;
+        overflow: hidden;
+        span
+        {
+            display: block;
+            float: left;
+            &:first-child
+            {
+                width: @lisHight + 10;
+            }
+            &:last-child
+            {
+                float: right;
+
+                margin-right: 5px;
+            }
+            &:nth-child(2)
+            {
+                margin-left: @lisHight + 5;
+            }
+        }
+    }
+}
+
+@lisHight: 40px;
+.list_detail
+{
+    li
+    {
+        line-height: @lisHight;
+
+        position: relative;
+
+        overflow: hidden;
+
+        height: @lisHight;
+        margin: 5px 0;
+        div
+        {
+            float: left;
+            overflow: hidden;
+
+            max-width: 142px;
+            max-height: @lisHight;
+
+            text-align: left;
+            white-space: nowrap;
+            //用户名溢出处理
+            text-overflow: ellipsis;
+            &:first-child
+            {
+                width: @lisHight + 10;
+
+                text-align: center;
+            }
+            &:last-child
+            {
+                float: right;
+
+                width: @lisHight + 5;
+                margin-right: 5px;
+
+                text-align: center;
+            }
+        }
+        img
+        {
+            float: left;
+
+            box-sizing: border-box;
+            width: @lisHight;
+            height: @lisHight;
+            margin-right: 5px;
+
+            border: 1px solid #f0eeef;
+            border-radius: 50%;
+        }
+    }
+}
+
+.firstpage
+{
+    li
+    {
+        &:first-child
+        {
+            font-size: 1.3em;
+
+            padding: 5px 0;
+
+            color: @redd;
+            border: 1px solid @redd;
+            // box-sizing: border-box;
+            border-radius: 3px;
+            box-shadow: 0 0 12px rgba(191, 22, 22, .15) inset;
+            &:before
+            {
+                position: absolute;
+                top: 2 + 5px;
+                left: 2px;
+
+                display: block;
+
+                width: @lisHight - 2;
+                height: @lisHight - 2;
+
+                content: '';
+
+                background-image: url(../images/winner1.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100% auto;
+            }
+        }
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5)
+        {
+            font-size: 1.2em;
+
+            color: @redd;
+            &:before
+            {
+                position: absolute;
+                top: 2px;
+                left: 2px;
+
+                display: block;
+
+                width: @lisHight - 2;
+                height: @lisHight - 2;
+
+                content: '';
+
+                background-image: url(../images/winner5.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100% auto;
+            }
+        }
+    }
+}
+
+.bb_helper
+{
+    overflow: hidden;
+
+    text-align: center;
+    ul li
+    {
+        float: left;
+        overflow: hidden;
+
+        box-sizing: border-box;
+        width: 25%;
+        // height: @lisHight;
+        padding: 5px;
+
+        text-overflow: ellipsis;
+        img
+        {
+            width: 80%;
+
+            border: 1px solid #f0eeef;
+            border-radius: 50%;
+        }
+        p
+        {
+            font-size: 12px;
+
+            overflow: hidden;
+
+            height: 1.2em;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.inf_feedback,
+.inf_QR
+{
+    position: fixed;
+    z-index: 99;
+    top: 30%;
+
+    display: none;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    opacity: 0;
+    color: #fff;
+    background-color: rgba(26, 26, 26, .9);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, .31);
+}
+
+.inf_feedback
+{
+    left: 50%;
+
+    width: 50%;
+    margin-left: -25%;
+    padding: 20px;
+
+    animation: inf_feedback 3s linear .1s;
+    animation-play-state: paused;
+
+    animation-fill-mode: forwards;
+    @media (min-width: 310px) and (max-width: 400px)
+    {
+        width: 290px;
+        margin-left: -290px /2;
+    }
+    @media (min-width: 400px) and (max-width: 767px)
+    {
+        width: 330px;
+        margin-left: -330px /2;
+    }
+    &.on
+    {
+        display: block;
+
+        animation-play-state: running;
+    }
+}
+
+@keyframes inf_feedback
+{
+    0%
+    {
+        top: 30%;
+
+        opacity: 0;
+    }
+    10%
+    {
+        top: 35%;
+
+        opacity: 1;
+    }
+    90%
+    {
+        top: 35%;
+
+        opacity: 1;
+    }
+    100%
+    {
+        top: 30%;
+
+        opacity: 0;
+    }
+}
+
+.inf_QR
+{
+    display: none;
+
+    width: 100%;
+    padding: 20px;
+
+    transition: opacity .3s linear .1s;
+    img
+    {
+        @media (min-width: 310px) and (max-width: 400px)
+        {
+            width: 290px;
+        }
+        @media (min-width: 400px) and (max-width: 767px)
+        {
+            width: 330px;
+        }
+    }
+}
